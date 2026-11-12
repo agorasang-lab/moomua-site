@@ -33,6 +33,27 @@
   var wherePic=$('.where-photo img');
   var track=$('.g-track'), pics=$$('.g-track img');
 
+  // 경력·자격·수료: 항목 수만큼 스크롤 길이를 나눠 씀, 한 줄씩 켜짐
+  var cv=$('.cv'), cvPanels=$$('.cv-panel'), cvTabs=$$('.cv-tabs button'), cvSeg=0;
+  var cvW=cvPanels.map(function(p){return $$('li',p).length;}), cvCum=[0];
+  cvW.forEach(function(w,k){cvCum.push(cvCum[k]+w);});
+  var cvTotal=cvCum[cvCum.length-1];
+  cvTabs.forEach(function(t,k){t.addEventListener('click',function(){
+    var top0=cv.getBoundingClientRect().top+scrollY, rng=cv.offsetHeight-innerHeight;
+    scrollTo({top:top0+rng*(cvCum[k]+.3)/cvTotal+1,behavior:reduce?'auto':'smooth'});
+  });});
+  function career(){
+    var pos=prog(cv)*.9999*cvTotal, seg=0;
+    while(seg<cvPanels.length-1&&pos>=cvCum[seg+1]) seg++;
+    var local=(pos-cvCum[seg])/cvW[seg], pn=cvPanels[seg], lis=$$('li',pn);
+    var shown=Math.min(lis.length,Math.floor(local*lis.length*1.15)+1);
+    lis.forEach(function(li,k){li.classList.toggle('on',k<shown);li.classList.toggle('cur',k===shown-1);});
+    $('.cv-items',pn).style.setProperty('--lp',(shown/lis.length).toFixed(3));
+    if(seg!==cvSeg){cvPanels.forEach(function(p,k){p.classList.toggle('on',k===seg);});cvTabs.forEach(function(t,k){t.setAttribute('aria-current',String(k===seg));});cvSeg=seg;}
+    cvTabs.forEach(function(t,k){t.style.setProperty('--tp',k<seg?1:k===seg?local.toFixed(3):0);});
+    $('.cv-ghost',pn).style.setProperty('--gx',((.5-local)*24).toFixed(2)+'vw');
+  }
+
   // 고정 구역 안에서 얼마나 내려왔는지 0~1
   function prog(sec){var r=sec.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight));}
 
@@ -53,10 +74,12 @@
     top.classList.toggle('scrolled',y>10);
     spine.style.setProperty('--sp',clamp(y/H));
     var cr=contact.getBoundingClientRect();
-    cta.classList.toggle('show',y>vh*2.4 && cr.top>vh*.8);
+    var cvr=cv.getBoundingClientRect();
+    cta.classList.toggle('show',y>vh*2.4 && cr.top>vh*.8 && !(cvr.top<=0 && cvr.bottom>=vh));
     if(reduce) return;
 
     opening.style.setProperty('--p',prog(opening).toFixed(4));
+    career();
 
 
     var p=prog(empty), n=words.length;
