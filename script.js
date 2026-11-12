@@ -67,7 +67,16 @@
 
   // 아치 사진이 끝에 화면을 꽉 채울 배율
   var opArch=$('.op-arch');
-  function fit(){opening.style.setProperty('--s',(Math.max(innerWidth/opArch.offsetWidth,innerHeight/opArch.offsetHeight)*1.25).toFixed(3));}
+  function fit(){
+    opening.style.setProperty('--s',(Math.max(innerWidth/opArch.offsetWidth,innerHeight/opArch.offsetHeight)*1.25).toFixed(3));
+    // 글자를 크게 쓰는 폰·낮은 화면: 목록이 칸보다 길면 줄여서 탭과 겹치지 않게
+    if(reduce) return;
+    cvPanels.forEach(function(p){
+      var ul=$('.cv-items',p); ul.style.transform='';
+      var k=(p.clientHeight-24)/ul.offsetHeight;
+      if(k<1) ul.style.transform='scale('+k.toFixed(3)+')';
+    });
+  }
 
   function tick(){
     var vh=innerHeight, y=scrollY, H=document.documentElement.scrollHeight-vh;
@@ -115,5 +124,5 @@
   track.addEventListener('scroll',function(){requestAnimationFrame(gallery);},{passive:true});
   steps[0].classList.add('on'); map.dataset.step=0;
   fit(); tick(); gallery();
-  window.addEventListener('load',gallery);
+  window.addEventListener('load',function(){fit();tick();gallery();});
 })();
