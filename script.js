@@ -14,11 +14,14 @@
   }
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     if(!e.isIntersecting) return;
-    e.target.classList.add('in');
-    if(e.target.dataset.count) count(e.target);
+    var el=e.target.clipChild||e.target;
+    el.classList.add('in');
+    if(el.dataset.count) count(el);
     io.unobserve(e.target);
   });},{threshold:.2});
-  $$('.reveal,.rise,.clip,[data-count]').forEach(function(el){io.observe(el);});
+  $$('.reveal,.rise,[data-count]').forEach(function(el){io.observe(el);});
+  // 가려진(clip) 사진은 크기가 0으로 잡혀서 감싼 부모를 지켜봄
+  $$('.clip').forEach(function(el){el.parentNode.clipChild=el;io.observe(el.parentNode);});
 
   var top=$('.top'), spine=$('.spine'), cta=$('.float-cta'), contact=$('#contact');
   var opening=$('.opening'), empty=$('.empty'), breath=$('.breath'), map=$('.body-map');
