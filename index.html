@@ -17,11 +17,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400&text=%E7%84%A1%E5%AB%B5%E6%88%91&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/portrait.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"김현주","jobTitle":"필라테스 강사, MOOMUA 대표","worksFor":{"@type":"Organization","name":"MOOMUA STUDIO"},"sameAs":["https://blog.naver.com/moomua","https://www.instagram.com/dyu.u/"]}</script>
 <script>document.documentElement.className="js"</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="spine" aria-hidden="true"><i></i></div>
 
 <header class="top">
   <a class="top-logo" href="#hero" aria-label="MOOMUA 처음으로"><img src="images/logo_dark.png" alt="MOOMUA STUDIO" width="709" height="367"></a>
@@ -36,21 +39,25 @@
 
 <main>
 
-<section class="hero" id="hero">
-  <div class="hero-text">
-    <p class="eyebrow">MOOMUA · <span class="han">無嫵我</span></p>
-    <h1>비워낸 자리에<br>남는 것,<br><em>진짜 아름다운 나</em></h1>
-    <p class="hero-en">Meeting Origin, Obtaining Mindfulness<br>: Ultimate Awakening.</p>
-    <p class="hero-ko">본연의 나를 만나고, 마음 챙김을 얻는 시간</p>
+<!-- 1. 오프닝: MOO | MUA 가 갈라지며 아치 사진이 화면을 채움 -->
+<section class="opening" id="hero" data-pin>
+  <div class="pin-stage">
+    <figure class="op-arch"><img src="images/portrait.jpg" alt="MOOMUA 대표 김현주" width="900" height="1350" fetchpriority="high"></figure>
+    <p class="op-word op-l" aria-hidden="true">MOO</p>
+    <p class="op-word op-r" aria-hidden="true">MUA</p>
+    <p class="op-sub">Meeting Origin, Obtaining Mindfulness<br>: Ultimate Awakening.</p>
+    <div class="op-copy">
+      <p class="eyebrow light">MOOMUA · <span class="han">無嫵我</span></p>
+      <h1>비워낸 자리에<br>남는 것,<br><em>진짜 아름다운 나</em></h1>
+      <p>본연의 나를 만나고, 마음 챙김을 얻는 시간</p>
+    </div>
+    <span class="op-cue" aria-hidden="true">스크롤<span></span></span>
   </div>
-  <figure class="arch hero-photo">
-    <img src="images/portrait.jpg" alt="MOOMUA 대표 김현주" width="900" height="1350" fetchpriority="high">
-  </figure>
-  <a class="scroll-cue" href="#empty">비워 볼까요<span aria-hidden="true"></span></a>
 </section>
 
-<section class="empty" id="empty" aria-label="비우기">
-  <div class="empty-stage">
+<!-- 2. 비우기: 낱말이 하나씩 사라짐 -->
+<section class="empty" id="empty" data-pin aria-label="비우기">
+  <div class="pin-stage">
     <p class="empty-lead">요즘은 정보가 너무 많아요.</p>
     <ul class="noise" aria-hidden="true">
       <li>다이어트 방법</li><li>빠른 변화</li><li>유행하는 보조제</li>
@@ -60,31 +67,34 @@
   </div>
 </section>
 
+<!-- 3. 이름 -->
 <section class="sec name" id="name">
   <p class="eyebrow">이름의 의미</p>
   <h2>나를 비워야<br>진짜 나를 만난다</h2>
   <div class="name-pair">
-    <div class="glyph reveal">
-      <span class="g-han">無</span>
-      <span class="g-en">Moo</span>
-      <p>비우다</p>
-    </div>
+    <div class="glyph reveal"><span class="g-han">無</span><span class="g-en">Moo</span><p>비우다</p></div>
     <span class="plus" aria-hidden="true">+</span>
-    <div class="glyph reveal">
-      <span class="g-han">嫵我</span>
-      <span class="g-en">Mua</span>
-      <p>아름다운 나</p>
-    </div>
+    <div class="glyph reveal"><span class="g-han">嫵我</span><span class="g-en">Mua</span><p>아름다운 나</p></div>
   </div>
   <p class="body reveal">몸과 마음의 불필요한 것들을 비워내고, 본연의 상태로 돌아간다. 예쁘고 화려한 이름은 많지만, MOOMUA는 반대로 가고 싶었습니다.</p>
 </section>
 
+<!-- 4. 호흡: 원이 커졌다 작아짐 -->
+<section class="breath" data-pin aria-label="호흡">
+  <div class="pin-stage">
+    <div class="b-circle" aria-hidden="true"><span></span></div>
+    <p class="b-word" aria-live="off"><span class="w-in">들이쉬고</span><span class="w-out">내쉬고</span></p>
+    <p class="b-end">아픈 곳에 힘을 더 주기보다<br>연결된 곳의 긴장을 비워낼 때,<br><strong>몸은 스스로 균형을 찾습니다.</strong></p>
+  </div>
+</section>
+
+<!-- 5. 로고 이야기 -->
 <section class="sec logo-story">
   <svg class="arch-line" viewBox="0 0 300 180" aria-hidden="true"><path d="M20 170 C 20 20, 280 20, 280 170" /></svg>
   <p class="eyebrow">로고에 담은 이야기</p>
   <h2>줄에 몸을 맡긴 채<br>만들어지는 아치</h2>
   <div class="split">
-    <figure class="frame reveal"><img src="images/cadillac_bw.jpg" alt="캐딜락 기구에서 줄에 몸을 맡긴 동작" width="900" height="676" loading="lazy"></figure>
+    <figure class="frame clip"><img src="images/cadillac_bw.jpg" alt="캐딜락 기구에서 줄에 몸을 맡긴 동작" width="900" height="676" loading="lazy"></figure>
     <div class="reveal">
       <p class="body">불필요한 걸 내려놓고 본연의 균형으로 돌아가는 과정을 그렸습니다. 일부러 완벽하게 다듬지 않고 투박한 질감을 남겼어요. ‘있는 그대로의 나’를 받아들이는 자연스러움입니다.</p>
       <p class="body">발바닥에서 시작해 척추를 따라 머리까지 이어지는 흐름. 몸과 마음, 감각과 호흡, 내면과 외면이 하나로 연결되는 순간. 그게 MOOMUA 수업이 지향하는 시간입니다.</p>
@@ -92,46 +102,84 @@
   </div>
 </section>
 
-<section class="sec values">
-  <p class="eyebrow">MOOMUA가 지키는 것</p>
-  <h2>빠른 변화보다,<br>스스로 아는 몸</h2>
-  <p class="body">MOOMUA는 빠른 변화나 화려한 결과를 약속하지 않습니다. 대신 내 몸의 감각을 스스로 알아차리고, 스스로 설계할 수 있게 돕습니다.</p>
-  <ol class="value-list">
-    <li class="reveal"><span>01</span><h3>진정성</h3><p>직접 겪고 검증한 것만 나눕니다.</p></li>
-    <li class="reveal"><span>02</span><h3>연결성</h3><p>머리부터 발끝까지, 몸은 하나로 연결되어 있다는 관점으로 봅니다.</p></li>
-    <li class="reveal"><span>03</span><h3>건강한 영향력</h3><p>유행하는 보조제나 시술 대신, 오래 지속 가능한 루틴을 전합니다.</p></li>
-  </ol>
+<!-- 6. 가치 + 흐르는 글자 -->
+<section class="values">
+  <div class="marquee" aria-hidden="true"><p>Meeting Origin · Obtaining Mindfulness · Ultimate Awakening · Meeting Origin · Obtaining Mindfulness · Ultimate Awakening ·</p></div>
+  <div class="values-in">
+    <p class="eyebrow light">MOOMUA가 지키는 것</p>
+    <h2>빠른 변화보다,<br>스스로 아는 몸</h2>
+    <p class="body">MOOMUA는 빠른 변화나 화려한 결과를 약속하지 않습니다. 대신 내 몸의 감각을 스스로 알아차리고, 스스로 설계할 수 있게 돕습니다.</p>
+    <ol class="value-list">
+      <li class="reveal"><span>01</span><h3>진정성</h3><p>직접 겪고 검증한 것만 나눕니다.</p></li>
+      <li class="reveal"><span>02</span><h3>연결성</h3><p>머리부터 발끝까지, 몸은 하나로 연결되어 있다는 관점으로 봅니다.</p></li>
+      <li class="reveal"><span>03</span><h3>건강한 영향력</h3><p>유행하는 보조제나 시술 대신, 오래 지속 가능한 루틴을 전합니다.</p></li>
+    </ol>
+  </div>
+  <div class="marquee rev" aria-hidden="true"><p>無嫵我 · Pilates · Yoga · Rehabilitation · Women’s Health · 無嫵我 · Pilates · Yoga · Rehabilitation · Women’s Health ·</p></div>
 </section>
 
+<!-- 7. 원장 -->
 <section class="sec about" id="about">
   <p class="eyebrow">Instructor</p>
   <div class="about-head">
-    <figure class="arch about-photo reveal"><img src="images/stool.jpg" alt="김현주 원장" width="900" height="1600" loading="lazy"></figure>
-    <div>
+    <figure class="arch about-photo clip"><img src="images/stool.jpg" alt="김현주 원장" width="900" height="1600" loading="lazy"></figure>
+    <div class="reveal">
       <h2 class="person">김현주</h2>
       <p class="role">MOOMUA 대표 · 필라테스,온:유 대표원장</p>
       <p class="tags">Pilates · Yoga · Rehabilitation · Women’s Health</p>
       <blockquote>“움직임을 이해하고, 기능을 회복하며, 더 나은 신체 능력으로 나아가는 과정을 함께합니다.”</blockquote>
     </div>
   </div>
-
-  <h3 class="story-title">아픈 곳은 매번 달랐지만,<br>원인은 늘 다른 곳에 있었어요</h3>
-  <ol class="story">
-    <li class="reveal"><b>발목·무릎</b><p>중고등학생 때 이유 없이 아프던 통증이, 운동을 하니 사라졌습니다.</p></li>
-    <li class="reveal"><b>허리</b><p>10년 전 요가 수련 중 허리 인대를 다쳤고, 지금도 골반 정렬이 틀어질 때면 통증이 찾아옵니다.</p></li>
-    <li class="reveal"><b>손목</b><p>핸즈온 수업으로 상한 손목은 견갑 안정화 운동으로 보호대 없이 수업할 수 있게 되었습니다.</p></li>
-  </ol>
-  <p class="body story-end reveal">그래서 아픈 부위만 붙잡고 교정하기보다, <strong>몸 전체가 어떻게 연결되어 있는지 함께 알아가는 방식</strong>으로 수업합니다.</p>
 </section>
 
+<!-- 8. 몸 지도: 아픈 곳과 원인이 하나씩 켜짐 -->
+<section class="body-map" data-pin aria-labelledby="bm-title">
+  <div class="pin-stage">
+    <div class="bm-text">
+      <p class="eyebrow light">몸은 다 연결되어 있다는 걸, 몸으로 배웠어요</p>
+      <h2 id="bm-title" class="sr-only">아픈 곳은 매번 달랐지만, 원인은 늘 다른 곳에</h2>
+      <ol class="bm-steps">
+        <li><b>발목 · 무릎</b><p>중고등학생 때 이유 없이 아프던 통증이, 운동을 하니 사라졌습니다.</p></li>
+        <li><b>허리 ← 골반</b><p>10년 전 요가 수련 중 다친 허리 인대. 지금도 골반 정렬이 틀어질 때면 통증이 찾아옵니다.</p></li>
+        <li><b>손목 ← 견갑</b><p>핸즈온으로 상한 손목. 견갑 안정화 운동을 시작하자 보호대 없이 수업할 수 있게 되었습니다.</p></li>
+        <li><b>아픈 곳은 매번 달랐지만,<br>원인은 늘 다른 곳에</b><p>그래서 아픈 부위만 붙잡기보다, 몸 전체가 어떻게 연결되어 있는지 함께 알아갑니다.</p></li>
+      </ol>
+    </div>
+    <svg class="figure" viewBox="0 0 200 400" aria-hidden="true">
+      <g class="fig-body">
+        <circle cx="100" cy="38" r="22"/>
+        <path d="M100 62 V212"/>
+        <path d="M100 88 L62 150 L50 206"/><path d="M100 88 L138 150 L150 206"/>
+        <path d="M100 212 L82 300 L78 378 L64 384"/><path d="M100 212 L118 300 L122 378 L136 384"/>
+      </g>
+      <path class="fig-link" d="M78 374 L82 300 L100 212 L100 188 L100 120 L124 98 L138 150 L150 204"/>
+      <g class="pt s1"><circle class="pain" cx="82" cy="300" r="6"/><circle class="pain" cx="78" cy="372" r="6"/></g>
+      <g class="pt s2"><circle class="pain" cx="100" cy="186" r="6"/><circle class="cause" cx="100" cy="212" r="6"/></g>
+      <g class="pt s3"><circle class="pain" cx="150" cy="204" r="6"/><circle class="cause" cx="124" cy="98" r="6"/></g>
+    </svg>
+    <p class="bm-legend" aria-hidden="true"><span class="lg-pain">아픈 곳</span><span class="lg-cause">원인</span></p>
+  </div>
+</section>
+
+<!-- 9. 숫자 -->
+<section class="sec stats" aria-label="경력 요약">
+  <ul>
+    <li><b data-count="8">0</b><span>년</span><p>필라테스 지도 경력</p></li>
+    <li><b data-count="8">0</b><span>곳</span><p>거쳐 온 센터</p></li>
+    <li><b data-count="13">0</b><span>개</span><p>자격 · 수료 과정</p></li>
+    <li><b data-count="2">0</b><span>곳</span><p>활동 지역 · 인천 속초</p></li>
+  </ul>
+</section>
+
+<!-- 10. 수업 분야 -->
 <section class="sec care" id="care">
   <p class="eyebrow">수업 분야</p>
   <h2>개인의 목적과 상태에 맞춘<br>맞춤형 운동</h2>
   <ul class="care-grid">
-    <li class="reveal"><span class="c-ko">재활·기능회복</span><span class="c-en">Rehabilitation</span></li>
-    <li class="reveal"><span class="c-ko">산전·산후 케어</span><span class="c-en">Women’s Health</span></li>
-    <li class="reveal"><span class="c-ko">체형교정·통증관리</span><span class="c-en">Posture &amp; Pain Care</span></li>
-    <li class="reveal"><span class="c-ko">필라테스·요가</span><span class="c-en">Pilates &amp; Yoga</span></li>
+    <li class="rise"><span class="c-no">01</span><span class="c-ko">재활·기능회복</span><span class="c-en">Rehabilitation</span></li>
+    <li class="rise"><span class="c-no">02</span><span class="c-ko">산전·산후 케어</span><span class="c-en">Women’s Health</span></li>
+    <li class="rise"><span class="c-no">03</span><span class="c-ko">체형교정·통증관리</span><span class="c-en">Posture &amp; Pain Care</span></li>
+    <li class="rise"><span class="c-no">04</span><span class="c-ko">필라테스·요가</span><span class="c-en">Pilates &amp; Yoga</span></li>
   </ul>
   <div class="cases reveal">
     <h3>함께해 온 회원님들</h3>
@@ -145,6 +193,7 @@
   </div>
 </section>
 
+<!-- 11. 사진: 넘기면 가운데 사진이 커짐 -->
 <section class="gallery" aria-label="수업 사진">
   <div class="g-track">
     <img src="images/handson.jpg" alt="리포머에서 회원 자세를 잡아주는 모습" width="900" height="1215" loading="lazy">
@@ -155,6 +204,7 @@
   <p class="g-hint" aria-hidden="true">옆으로 넘겨 보세요 →</p>
 </section>
 
+<!-- 12. 경력 -->
 <section class="sec career" id="career">
   <p class="eyebrow">Career &amp; Education</p>
   <h2>필라테스 지도 경력 8년</h2>
@@ -162,14 +212,14 @@
     <div>
       <h3>경력</h3>
       <ul class="tl">
-        <li class="now"><i>현</i>필라테스,온:유 대표원장</li>
-        <li><i>전</i>킴스요가필라테스 주안점</li>
-        <li><i>전</i>스포애니 인천산곡점 (매트, 기구필라테스)</li>
-        <li><i>전</i>ING필라테스 부평구청점 (오전·오후 전임)</li>
-        <li><i>전</i>Better Line 필라테스</li>
-        <li><i>전</i>홈플러스 인천논현점 문화센터</li>
-        <li><i>전</i>바디홀릭필라테스 학익점 (오전·오후 개인레슨 전임)</li>
-        <li><i>전</i>젠필라테스</li>
+        <li class="now reveal"><i>현</i>필라테스,온:유 대표원장</li>
+        <li class="reveal"><i>전</i>킴스요가필라테스 주안점</li>
+        <li class="reveal"><i>전</i>스포애니 인천산곡점 (매트, 기구필라테스)</li>
+        <li class="reveal"><i>전</i>ING필라테스 부평구청점 (오전·오후 전임)</li>
+        <li class="reveal"><i>전</i>Better Line 필라테스</li>
+        <li class="reveal"><i>전</i>홈플러스 인천논현점 문화센터</li>
+        <li class="reveal"><i>전</i>바디홀릭필라테스 학익점 (오전·오후 개인레슨 전임)</li>
+        <li class="reveal"><i>전</i>젠필라테스</li>
       </ul>
       <p class="study">스포츠지도학과 재학 중</p>
     </div>
@@ -194,6 +244,7 @@
   </div>
 </section>
 
+<!-- 13. 장소 -->
 <section class="where" id="where">
   <figure class="where-photo"><img src="images/sea.jpg" alt="속초 바다를 바라보는 뒷모습" width="900" height="1200" loading="lazy"></figure>
   <div class="where-text">
@@ -206,6 +257,7 @@
   </div>
 </section>
 
+<!-- 14. 문의 -->
 <section class="sec contact" id="contact">
   <img class="contact-logo" src="images/logo_dark.png" alt="" width="709" height="367" loading="lazy">
   <h2>수업 · 강의 문의</h2>
@@ -218,8 +270,10 @@
 
 </main>
 
+<a class="float-cta" href="#contact">문의하기</a>
+
 <footer class="foot">
-  <p>MOOMUA STUDIO · 無嫵我</p>
+  <p>MOOMUA STUDIO · <span class="han">無嫵我</span></p>
   <p>© 2026 김현주</p>
 </footer>
 
